@@ -197,6 +197,7 @@ $('document').ready(function(){
 			if(i==50){
 				$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
 					$('.cake').fadeIn('fast');
+					$('.full-message').css('margin-top','120px');
 					$("p:last-child()").fadeIn('slow').delay(1000);
 				});
 			}
