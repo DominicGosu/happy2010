@@ -119,7 +119,7 @@ $('document').ready(function(){
 	}
 
 	$('#balloons_flying').click(function(){
-		$('.balloon-border').animate({top:-500},8000);
+		$('.balloon-border').animate({top:-500},4000);
 		$('#b1,#b4,#b5,#b7,#b9').addClass('balloons-rotate-behaviour-one');
 		$('#b2,#b3,#b6,#b8').addClass('balloons-rotate-behaviour-two');
 		loopOne();
@@ -199,6 +199,11 @@ $('document').ready(function(){
 					$('.cake').fadeIn('fast');
 					$('.full-message').css('margin-top','120px');
 					$('.full-message').fadeIn('slow').delay(600);
+					if (window.DeviceOrientationEvent) {
+
+						window.addEventListener('deviceorientation', ()=>{$('.full-message').fadeOut('slow').delay(500)}, false);
+					  
+					  }
 				});
 			}
 			else{
