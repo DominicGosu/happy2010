@@ -120,8 +120,8 @@ $('document').ready(function(){
 
 	$('#balloons_flying').click(function(){
 		$('.balloon-border').animate({top:-500},4000);
-		$('#b1,#b4,#b5,#b7,#b9').addClass('balloons-rotate-behaviour-one');
-		$('#b2,#b3,#b6,#b8').addClass('balloons-rotate-behaviour-two');
+		$('#b4,#b5,#b7,#b9').addClass('balloons-rotate-behaviour-one');
+		$('#b1,#b2,#b3,#b6,#b8').addClass('balloons-rotate-behaviour-two');
 		loopOne();
 		loopTwo();
 		loopThree();
@@ -162,16 +162,16 @@ $('document').ready(function(){
 		$('#b7').attr('id','b77')
 		$('#b8').attr('id','b88')
 		$('#b9').attr('id','b99')
-		$('#b11').animate({top:240, left: vw-400},500);
-		$('#b22').animate({top:240, left: vw-300},500);
-		$('#b33').animate({top:240, left: vw-200},500);
-		$('#b44').animate({top:240, left: vw-100},500);
-		$('#b55').animate({top:240, left: vw-50},500);
-		$('#b66').animate({top:240, left: vw+50},500);
-		$('#b77').animate({top:240, left: vw+100},500);
-		$('#b88').animate({top:240, left: vw+200},500);
-		$('#b99').animate({top:240, left: vw+300},500);
-		$('#b1010').animate({top:240, left: vw+400},500);
+		$('#b11').animate({top:190, left: vw-200},500);
+		$('#b22').animate({top:190, left: vw-150},500);
+		$('#b33').animate({top:190, left: vw-50},500);
+		$('#b44').animate({top:190, left: vw+50},500);
+		$('#b55').animate({top:190, left: vw+100},500);
+		$('#b66').animate({top:270, left: vw-200},500);
+		$('#b77').animate({top:270, left: vw-100},500);
+		$('#b88').animate({top:270, left: vw},500);
+		$('#b99').animate({top:270, left: vw+100},500);
+		// $('#b1010').animate({top:240, left: vw+400},500);
 		$('.balloons').css('opacity','0.9');
 		$('.balloons h2').fadeIn(2000);
 		$(this).fadeOut('slow').delay(2000).promise().done(function(){
@@ -201,7 +201,12 @@ $('document').ready(function(){
 					$('.full-message').fadeIn('slow').delay(600);
 					if (window.DeviceOrientationEvent) {
 
-						window.addEventListener('deviceorientation', ()=>{$('.full-message').fadeOut('slow').delay(500)}, false);
+						window.addEventListener('deviceorientation', (event)=>{
+							if(event.alpha > 90)
+							{
+								$('.full-message').fadeOut('slow').delay(500)
+							}
+						}, false);
 					  
 					  }
 				});
